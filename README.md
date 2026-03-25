@@ -13,14 +13,24 @@ Provides access to XIMEA cameras for image acquisition, parameter control, and i
 ## Installation
 
 ```bash
-uv add /path/to/ximea-py
+uv add git+https://github.com/elhananby/ximea-py
 ```
 
 With numpy support for array-based image data:
 
 ```bash
-uv add "/path/to/ximea-py[numpy]"
+uv add "ximea[numpy] @ git+https://github.com/elhananby/ximea-py"
 ```
+
+### Development
+
+```bash
+git clone https://github.com/elhananby/ximea-py.git
+cd ximea-py
+uv sync --group dev
+```
+
+This installs `pytest`, `ruff`, and `numpy` for development.
 
 ## Usage
 
