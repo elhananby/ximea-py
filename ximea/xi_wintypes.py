@@ -1,6 +1,7 @@
-'''
+"""
 data types as declared in library ctypes.wintypes in Python for windows
-'''
+"""
+
 from ctypes import c_uint, c_float, c_void_p, c_double
 
 DWORD = c_uint

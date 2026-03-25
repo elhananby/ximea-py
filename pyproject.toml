@@ -9,7 +9,11 @@ dependencies = []
 numpy = ["numpy"]
 
 [dependency-groups]
-dev = ["pytest", "ruff", "numpy"]
+dev = [
+    "pytest",
+    "ruff",
+    "numpy",
+]
 
 [build-system]
 requires = ["hatchling"]
