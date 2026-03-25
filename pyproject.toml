@@ -13,6 +13,9 @@ dev = [
     "pytest",
     "ruff",
     "numpy",
+    "av>=12.3.0",
+    "pyzmq>=27.1.0",
+    "matplotlib>=3.7.5",
 ]
 
 [build-system]

@@ -3,4 +3,21 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+
+# venv / uv
 .venv/
+.python-version
+
+# ruff
+.ruff_cache/
+
+# captures
+captures/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
