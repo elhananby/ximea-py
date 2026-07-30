@@ -73,4 +73,4 @@ See the [`examples/`](examples/) directory for more:
 
 ## License
 
-MIT
+BSD 3-Clause
