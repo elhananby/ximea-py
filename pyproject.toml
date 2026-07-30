@@ -3,6 +3,9 @@ name = "ximea"
 version = "4.33.14"
 description = "Python wrapper for XIMEA camera xiApi"
 requires-python = ">=3.8"
+authors = [
+    { name = "Elhanan Buchsbaum", email = "elhanan.buchsbaum@mpinb.mpg.de" },
+]
 dependencies = []
 
 [project.optional-dependencies]
