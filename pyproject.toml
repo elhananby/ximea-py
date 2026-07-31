@@ -24,6 +24,3 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["ximea"]
-
-[tool.hatch.build.targets.wheel.force-include]
-"ximea/libs" = "ximea/libs"
