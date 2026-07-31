@@ -13,13 +13,13 @@ Provides access to XIMEA cameras for image acquisition, parameter control, and i
 ## Installation
 
 ```bash
-uv add git+https://github.com/elhananby/ximea-py
+uv add git+https://github.com/mpinb/ximea-py
 ```
 
 With numpy support for array-based image data:
 
 ```bash
-uv add "ximea[numpy] @ git+https://github.com/elhananby/ximea-py"
+uv add "ximea[numpy] @ git+https://github.com/mpinb/ximea-py"
 ```
 
 ### Development
@@ -90,6 +90,8 @@ See the [`examples/`](examples/) directory for more:
 | [hardware_trigger.py](examples/hardware_trigger.py) | External hardware trigger |
 | [temperature.py](examples/temperature.py) | Read sensor temperature |
 | [error_handling.py](examples/error_handling.py) | Proper error handling with `Xi_error` |
+| [benchmark_fps.py](examples/benchmark_fps.py) | Benchmark maximum framerate with a circular buffer |
+| [triggered_capture.py](examples/triggered_capture.py) | Triggered capture with pre/post-trigger circular buffer and GPU encoding |
 
 ## Package Contents
 
