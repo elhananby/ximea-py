@@ -50,6 +50,34 @@ cam.stop_acquisition()
 cam.close_device()
 ```
 
+### Sensor Corrections
+
+As of the latest version, `open_device()` automatically enables sensor corrections
+(bad pixel correction, column/row fixed-pattern noise correction) to match xiCamTool
+defaults. To disable them after opening:
+
+```python
+cam.disable_bpc()
+cam.set_column_fpn_correction("XI_OFF")
+cam.set_row_fpn_correction("XI_OFF")
+```
+
+### Frame Buffer Management
+
+The default buffer queue holds up to 33 frames (~825 MB at 5060x5060). In
+applications that change optical parameters between grabs (e.g. autofocus sweeps),
+stale frames from the queue can be returned instead of fresh captures. To avoid this:
+
+```python
+cam.open_device()
+cam.enable_recent_frame()       # prefer newest buffered frame
+cam.set_buffers_queue_size(2)   # keep queue small to limit staleness
+cam.start_acquisition()
+```
+
+With a queue size of 2, discarding one frame before each measurement guarantees a
+fresh capture that reflects the current camera/optics state.
+
 See the [`examples/`](examples/) directory for more:
 
 | Example | Description |

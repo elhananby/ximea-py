@@ -350,6 +350,10 @@ class Camera(object):
     def open_device(self):
         """
         Connect the camera specified by dev_id from __init__.
+
+        Enables sensor corrections (bad pixel correction and column/row
+        fixed-pattern noise correction) by default to match xiCamTool
+        behavior.  These can be disabled afterwards if not desired.
         """
         if not self.CAM_OPEN:
             self.handle = HANDLE()
@@ -358,6 +362,13 @@ class Camera(object):
                 raise Xi_error(stat)
 
             self.CAM_OPEN = True
+
+            # Enable sensor corrections that xiCamTool enables by default.
+            # Without these, images contain bad-pixel artifacts and
+            # column fixed-pattern noise that corrupt downstream metrics.
+            self.enable_bpc()
+            self.set_column_fpn_correction("XI_ON")
+            self.set_row_fpn_correction("XI_ON")
         else:
             raise RuntimeError(
                 "Camera already open. Create new instance to open next camera"
@@ -384,6 +395,11 @@ class Camera(object):
             if not stat == 0:
                 raise Xi_error(stat)
             self.CAM_OPEN = True
+
+            # Enable sensor corrections (same as open_device)
+            self.enable_bpc()
+            self.set_column_fpn_correction("XI_ON")
+            self.set_row_fpn_correction("XI_ON")
         else:
             raise RuntimeError(
                 "Camera already open. Create new instance to open next camera"
