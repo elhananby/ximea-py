@@ -103,4 +103,4 @@ See the [`examples/`](examples/) directory for more:
 
 ## License
 
-BSD 3-Clause
+GPLv3
